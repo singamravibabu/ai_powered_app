@@ -23,3 +23,10 @@
         - repository_dispatch and workflow_run
 
 ### Jobs
+- Jobs are building blocks of GitHub Actions workflows.
+- Invidual unit of work consisting of series of steps.
+- A structure of a job includes:
+    - Name: descriptive name for the job
+    - Runs on: using the keyword `runs-on`
+        - ubuntu-latest, windows-latest, or macos-latest, or a self-hosted lastest
+    - Steps: sequence of steps that perform individual tasks
