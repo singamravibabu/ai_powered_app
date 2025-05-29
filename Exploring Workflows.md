@@ -30,3 +30,29 @@
     - Runs on: using the keyword `runs-on`
         - ubuntu-latest, windows-latest, or macos-latest, or a self-hosted lastest
     - Steps: sequence of steps that perform individual tasks
+
+- Jobs in workflow run in parallel by default. We can also define dependencies between jobs using the **needs** keyword.
+
+```
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+  test:
+    needs: build
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+```
