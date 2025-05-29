@@ -56,3 +56,37 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1
 ```
+
+### Steps
+- Steps are fundamental units of work within a job.
+- Steps can include scripts, commands, or actions created by the GitHub community.
+- Three primary types of steps:
+    - Shell commands
+    - Built-in actions:
+        - actions/checkout
+        - actions/setup-node
+    - Community and third-party actions
+- Use the keyword `steps` to configure and define.
+- Common properties:
+    - name
+    - run
+    - uses
+    - with
+    - if
+
+```
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: latest
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+```
