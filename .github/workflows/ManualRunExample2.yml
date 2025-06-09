@@ -1,11 +1,11 @@
-name: manual-run-example-2
+name: manual-run-2-example
 on:
-  workflow_dispatch
+  workflow_dispatch:
     inputs:
       environment:
-	description: 'Deploy environment'
-	required: true
-	default: 'staging'
+        description: 'Deploy environment'
+        required: true
+        default: 'staging'
       version:
-	description: 'Version tag'
-	required: false
+        description: 'Version tag'
+        required: false
