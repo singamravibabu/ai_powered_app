@@ -8,4 +8,4 @@ on:
 	default: 'staging'
       version:
 	description: 'Version tag'
-	required false
+	required: false
