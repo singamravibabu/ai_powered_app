@@ -1,0 +1,9 @@
+name: manual-run-example
+on:
+  workflow_dispatch
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "This workflow was run manually!"
